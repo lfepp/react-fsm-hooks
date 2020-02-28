@@ -1,6 +1,5 @@
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
   globals: {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.json',
@@ -14,6 +13,7 @@ module.exports = {
   },
   modulePaths: ['<rootDir>/src'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
+  setupFilesAfterEnv: ['<rootDir>/src/tests/setup.ts'],
   testRegex: '\\.spec\\.(j|t)sx?$',
   transform: {
     '^.+\\.(t|j)sx?$': 'ts-jest',
